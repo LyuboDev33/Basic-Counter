@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./counter.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400..700&display=swap"rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="./images/counter.jpg">
+
+  <title>Basic Counter</title>
+
+</head>
+
+<body>
+
+  <div class="container">
+  <h1 class="counter"> Counter </h1>
+  <p class="number"> </p>
+
+  <div id="buttons">
+
+    <button onclick="
+      decreseMinus();
+      
+    " class="decrease">DECREASE</button>
+
+    <button onclick="
+    resetScore();
+    " class="reset">RESET</button>
+
+    <button onclick="
+    incresePlus();
+    
+    " class="increase">INCREASE</button>
+
+  </div>
+
+  </div>
+
+  <script>
+
+    let increase = 0;
+
+    document.querySelector('.number').innerHTML = `${increase}`
+
+    function incresePlus() {
+      increase++
+      document.querySelector('.number').innerHTML = `${increase}`
+      colorChange();
+    }
+
+    function decreseMinus() {
+      increase--
+      document.querySelector('.number').innerHTML = `${increase}`
+      colorChange();
+    }
+
+    function resetScore() {
+      increase = 0;
+      document.querySelector('.number').innerHTML = `${increase}`
+      value.style.color = "black"
+    }
+
+    let value = document.querySelector(".number")
+
+
+    function colorChange() {
+
+      if (increase < 0) {
+        value.style.color = "red";
+      } else if (increase > 0) {
+        value.style.color = "green";
+      } else if (increase == 0) { 
+        value.style.color = "black";
+      }
+    }
+
+
+  </script>
+
+</body>
+
+</html>
